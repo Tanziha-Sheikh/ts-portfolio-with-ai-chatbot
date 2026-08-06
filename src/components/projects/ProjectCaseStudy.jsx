@@ -5,7 +5,7 @@ import Chip from "@mui/material/Chip";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import Tilt3DCard from "../common/Tilt3DCard";
 
-export default function ProjectCard({ title, description, tags = [], image, url, type, impact, result }) {
+export default function ProjectCaseStudy({ title, description, tags = [], image, url, type, impact, result }) {
   return (
     <Tilt3DCard
       component="a"
@@ -14,17 +14,14 @@ export default function ProjectCard({ title, description, tags = [], image, url,
       rel="noopener"
       maxTilt={8}
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        height: "100%",
-        width: "100%",
+        display: "block",
         textDecoration: "none",
         borderRadius: (t) => `${t.tokens.radii.lg}px`,
         overflow: "hidden",
         bgcolor: "background.paper",
         border: "1px solid",
         borderColor: "divider",
-        boxShadow: (t) => `0 20px 40px -20px ${t.tokens.bgSunken}`,
+        boxShadow: (t) => `0 22px 50px -24px ${t.tokens.bgSunken}`,
         transition: "transform 220ms ease, border-color 220ms ease",
         "&:hover": {
           borderColor: "primary.main",
@@ -38,8 +35,8 @@ export default function ProjectCard({ title, description, tags = [], image, url,
           backgroundSize: "cover",
           backgroundPosition: "center",
           bgcolor: (t) => t.tokens.bgElevated,
-          transform: "translateZ(20px)",
           position: "relative",
+          transform: "translateZ(20px)",
           "::after": {
             content: '""',
             position: "absolute",
@@ -48,7 +45,8 @@ export default function ProjectCard({ title, description, tags = [], image, url,
           },
         }}
       />
-      <Box sx={{ p: 3, transform: "translateZ(30px)", flex: 1, display: "flex", flexDirection: "column" }}>
+
+      <Box sx={{ p: 3, transform: "translateZ(30px)" }}>
         <Stack direction="row" justifyContent="space-between" alignItems="flex-start" spacing={1}>
           <Box>
             <Typography variant="overline" sx={{ color: "primary.main", mb: 0.5 }}>
@@ -60,24 +58,28 @@ export default function ProjectCard({ title, description, tags = [], image, url,
           </Box>
           <ArrowOutwardIcon sx={{ color: "primary.main", fontSize: 20, mt: 0.5 }} />
         </Stack>
-        <Typography variant="body2" sx={{ color: "text.secondary", mt: 1, mb: 1.5, lineHeight: 1.75 }}>
+
+        <Typography variant="body2" sx={{ color: "text.secondary", mt: 1, mb: 2, lineHeight: 1.75 }}>
           {description}
         </Typography>
+
         {impact && (
-          <Typography variant="body2" sx={{ color: "text.primary", mb: 1, fontWeight: 600 }}>
+          <Typography variant="body2" sx={{ color: "text.primary", mb: 1.5, fontWeight: 600 }}>
             Impact: {impact}
           </Typography>
         )}
+
         {result && (
           <Typography variant="body2" sx={{ color: "text.secondary", mb: 2, lineHeight: 1.7 }}>
             {result}
           </Typography>
         )}
+
         <Stack direction="row" flexWrap="wrap" gap={1}>
-          {tags.map((t) => (
+          {tags.map((tag) => (
             <Chip
-              key={t}
-              label={t}
+              key={tag}
+              label={tag}
               size="small"
               sx={{
                 bgcolor: "background.default",

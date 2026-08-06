@@ -16,8 +16,8 @@ export default function ProjectsGrid({ heading = "Projects", items = [] }) {
         </Typography>
         <Grid container spacing={3}>
           {items.map((p, i) => (
-            <Grid item xs={12} sm={6} key={p.title}>
-              <Reveal direction="up" delay={(i % 2) * 0.1}>
+            <Grid item xs={12} sm={6} key={p.title} sx={{ display: "flex" }}>
+              <Reveal direction="up" delay={(i % 2) * 0.1} sx={{ width: "100%", display: "flex" }}>
                 <ProjectCard {...p} />
               </Reveal>
             </Grid>

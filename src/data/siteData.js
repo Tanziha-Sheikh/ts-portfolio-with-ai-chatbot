@@ -126,43 +126,53 @@ export const experience = [
 export const projects = [
   {
     title: "AMS - Ashara Management System",
-    description: "A platform for managing events, registrations",
+    description: "A multi-user event management platform with registration flows and admin controls for smooth event operations.",
     tags: ["React", "Node.js", "Express.js", "MongoDB", "MUI"],
     image: "/images/ams-page.png",
     url: "https://asharams.com/login",
-    type: "Client Project"
+    type: "Client Project",
+    impact: "Improved client-side operations",
+    result: "Built a polished, responsive experience for event admins and attendees with reusable interface modules."
   },
   {
     title: "MyLivecart - Live Shopping Platform",
-    description: "Customizable online stores with live-streaming commerce built in.",
+    description: "A flexible commerce experience that blends storefront customization with streaming-driven shopping interactions.",
     tags: ["Angular", "TypeScript", "Tailwind CSS", "Laravel", "MySQL", "WordPress", "Shopify"],
     image: "/images/my-livecart-page.png",
     url: "https://web.mylivecart.com/",
-    type: "Internal Project"
+    type: "Internal Project",
+    impact: "Broadened product flexibility",
+    result: "Contributed to a scalable interface for merchants and customers across multiple commerce workflows."
   },
   {
     title: "PaySheet",
-    description: "Multi-tenant pay review system for SMEs with live dashboards.",
+    description: "A multi-tenant payroll review platform with live dashboards and role-based workflow views for SMEs.",
     tags: ["React", "Backend API's provided by client"],
     image: "/images/project-4.jpg",
     url: "#",
-    type: "Client Project"
+    type: "Client Project",
+    impact: "Improved review visibility",
+    result: "Helped structure a more usable finance interface with clear data presentation and smooth interactions."
   },
   {
     title: "MPTL - Madhya Pradesh Tennis League 2023",
-    description: "A real-time bidding platform for professional tennis players.",
+    description: "A real-time bidding experience for tennis players built around live participation and event-driven updates.",
     tags: ["React", "WebSockets", "Express.js", "Laravel", "MySQL", "Tailwind CSS"],
     image: "/images/mptl.png",
     url: "#",
-    type: "Client Project"
+    type: "Client Project",
+    impact: "Strengthened live interactions",
+    result: "Delivered a dynamic interface that supported fast-moving user interactions and event state changes."
   },
   {
     title: "Odyssey - Time Tracker",
-    description: "An employee monitoring desktop app with screenshot capture.",
-    tags: ["React", "Electron",  ".Net", "MySQL" ],
+    description: "A desktop-based time tracking experience with employee monitoring features and activity visibility.",
+    tags: ["React", "Electron", ".Net", "MySQL"],
     image: "/images/odyssey-page.png",
     url: "#",
-    type: "Client Project"
+    type: "Client Project",
+    impact: "Improved operational visibility",
+    result: "Helped create a practical tracking workflow with a focused dashboard and reliable data handling."
   },
 ];
 

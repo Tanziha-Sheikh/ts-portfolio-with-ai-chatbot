@@ -4,11 +4,14 @@ import Footer from "../components/layout/Footer";
 import HeroSection from "../components/hero/HeroSection";
 import TechMarquee from "../components/marquee/TechMarquee";
 import AboutSection from "../components/about/AboutSection";
+import ValueSection from "../components/about/ValueSection";
 import ExperienceTimeline from "../components/experience/ExperienceTimeline";
 import ProjectsGrid from "../components/projects/ProjectsGrid";
 import BlogSection from "../components/blog/BlogSection";
 import ContactSection from "../components/contact/ContactInfo";
 import ChatWidget from "../components/chat/ChatWidget";
+import StatsStrip from "../components/common/StatsStrip";
+import TrustBar from "../components/contact/TrustBar";
 
 import {
   profile,
@@ -23,7 +26,7 @@ import {
 
 import { localAssistantReply } from "../lib/localAssistant";
 
-// Wire this up to your real backend (OpenAI, Gemini, a /api/chat route, etc.)
+// Wire the real backend (OpenAI, Gemini, a /api/chat route, etc.)
 // Until that route exists, this gracefully falls back to a local, canned
 // assistant (see src/lib/localAssistant.js) so the widget always works.
 async function handleChatMessage(message, history) {
@@ -71,6 +74,8 @@ export default function HomePage() {
 
       <TechMarquee items={techStack} />
 
+      <StatsStrip />
+
       <AboutSection
         headline={
           <>
@@ -85,9 +90,44 @@ export default function HomePage() {
         tools={toolTags}
       />
 
+      <ValueSection
+        title="I design and ship frontend experiences that feel polished, reliable, and easy to trust."
+        intro="My focus is turning product ideas into interfaces that are clean, fast, and thoughtful—whether I’m building for a startup, a client, or a growing product team. I care about both code quality and how the experience feels for the person using it."
+        badge="OPEN TO FRONTEND ROLES & FREELANCE"
+        highlights={[
+          {
+            icon: "speed",
+            title: "Fast-moving execution",
+            description: "I move quickly from idea to implementation while keeping the UI structured, responsive, and maintainable.",
+          },
+          {
+            icon: "design",
+            title: "Design-aware development",
+            description: "I translate mockups into polished interfaces with strong attention to spacing, hierarchy, and interaction details.",
+          },
+          {
+            icon: "team",
+            title: "Team-friendly collaboration",
+            description: "I communicate clearly with designers, developers, and stakeholders to keep projects moving without friction.",
+          },
+          {
+            icon: "spark",
+            title: "Modern frontend mindset",
+            description: "I enjoy building with React, component-based systems, and thoughtful UX patterns that scale well over time.",
+          },
+        ]}
+        proofPoints={[
+          "Frontend development with React, Angular, and modern UI libraries",
+          "Experience building responsive and client-facing product interfaces",
+          "Comfortable working across fast-paced teams and independent delivery",
+        ]}
+      />
+
       <ExperienceTimeline heading="Where I've worked" items={experience} />
 
-      <ProjectsGrid heading="Projects" items={projects} />
+      <ProjectsGrid heading="Selected work" items={projects} />
+
+      <TrustBar />
 
       <BlogSection
         heading="From the blog"
