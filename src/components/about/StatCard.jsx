@@ -15,6 +15,7 @@ export default function StatCard({ index, title, description }) {
         borderTop: "1px solid",
         borderColor: "divider",
         height: "100%",
+        mx: { xs: 0, md: 1 },
       }}
     >
       <Typography

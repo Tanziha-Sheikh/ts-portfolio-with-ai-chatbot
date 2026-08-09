@@ -38,12 +38,43 @@ export default function HeroSection({
         alignItems: "center",
         position: "relative",
         overflow: "hidden",
-        backgroundImage: (t) => `
-          linear-gradient(${t.tokens.divider} 1px, transparent 1px),
-          linear-gradient(90deg, ${t.tokens.divider} 1px, transparent 1px),
-          radial-gradient(circle at 15% 20%, ${t.tokens.accentSoft} 0%, transparent 45%)
-        `,
-        backgroundSize: "48px 48px, 48px 48px, 100% 100%",
+        // backgroundImage: (t) => `
+        //   // linear-gradient(${t.tokens.divider} 1px, transparent 1px),
+        //   // linear-gradient(90deg, ${t.tokens.divider} 1px, transparent 1px),
+        //   // radial-gradient(circle at 15% 20%, ${t.tokens.accentSoft} 0%, transparent 45%)
+        //       background-image: linear-gradient(${t.tokens.divider} 1px, transparent 1px), linear-gradient(90deg, ${t.tokens.divider} 1px, transparent 1px);
+        //       background-size: 80px 80px;
+        //       mask-image: radial-gradient(at 50% 40%, black 20%, transparent 75%);
+        // backgroundSize: "48px 48px, 48px 48px, 100% 100%",
+        // radial-gradient(circle at 15% 20%, ${t.tokens.accentSoft} 0%, transparent 45%)`,
+        //   }
+        // `,
+        backgroundColor: "background.default",
+        "::before": {
+          content: '""',
+          position: "absolute",
+          inset: 0,
+          backgroundImage: (t) => `
+            linear-gradient(${t.tokens.divider} 1px, transparent 1px),
+            linear-gradient(90deg, ${t.tokens.divider} 1px, transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+          backgroundPosition: "center center",
+          maskImage: "radial-gradient(circle at 50% 38%, black 15%, transparent 72%)",
+          WebkitMaskImage: "radial-gradient(circle at 50% 38%, black 15%, transparent 72%)",
+          opacity: 1,
+        },
+        "::after": {
+          content: '""',
+          position: "absolute",
+          right: "-10%",
+          top: "-10%",
+          width: "42%",
+          height: "64%",
+          background: (t) => `radial-gradient(circle, ${t.tokens.accentSoft} 0%, rgba(198,255,61,0.18) 2%, rgba(198,255,61,0.05) 72%, transparent 100%)`,
+          filter: "blur(22px)",
+          pointerEvents: "none",
+        },
       }}
     >
       <Container maxWidth="lg" sx={{ py: { xs: 10, md: 4 } }}>

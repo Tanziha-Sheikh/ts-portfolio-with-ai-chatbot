@@ -12,7 +12,7 @@ const stats = [
 
 export default function StatsStrip() {
   return (
-    <Box sx={{ py: { xs: 4, md: 2 } }}>
+    <Box sx={{ py: { xs: 4, md: 2 }, mt: 6 }}>
       <Container maxWidth="lg">
         <Box
           sx={{
